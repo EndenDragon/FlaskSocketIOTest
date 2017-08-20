@@ -2,7 +2,7 @@ import discord
 import socketio
 
 client = discord.Client()
-external_sio = socketio.AsyncRedisManager('redis://', write_only=True)
+external_sio = socketio.AsyncRedisManager('redis://', write_only=True, channel='flask-socketio')
 @client.event
 async def on_ready():
     print('Logged in as')
